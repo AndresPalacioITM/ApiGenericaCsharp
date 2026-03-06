@@ -1,3 +1,5 @@
+using ApiGenericaCsharp.Repositorios.Abstracciones;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +21,7 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+
 app.MapGet("/weatherforecast", () =>
 {
     var forecast =  Enumerable.Range(1, 5).Select(index =>
@@ -33,7 +36,26 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+public class RepositorioLecturaSqlServer : IRepositorioLecturaTabla
+{
+    private readonly IProveedorConexion _proveedor;
+    public RepositorioLecturaSqlServer(IProveedorConexion proveedor)
+    {
+        _proveedor = proveedor;
+    }
+    public async Task<IReadOnlyList<Dictionary<string, object?>>> ObtenerFilasAsync(string nombreTablla, string? esquema, int? limite)
+    {
+        var cadenaConexion = _proveedor.ObtenerCadenaConexion();
+        // Implementación para obtener filas de una tabla en SQL Server
+        // Aquí se usaría _proveedor para ejecutar la consulta y devolver los resultados
+        return new List<Dictionary<string, object?>>();
+    }
+}
+
+
 app.Run();
+
+
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
