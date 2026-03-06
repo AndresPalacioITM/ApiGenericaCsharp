@@ -36,21 +36,21 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
-public class RepositorioLecturaSqlServer : IRepositorioLecturaTabla
-{
-    private readonly IProveedorConexion _proveedor;
-    public RepositorioLecturaSqlServer(IProveedorConexion proveedor)
-    {
-        _proveedor = proveedor;
-    }
-    public async Task<IReadOnlyList<Dictionary<string, object?>>> ObtenerFilasAsync(string nombreTablla, string? esquema, int? limite)
-    {
-        var cadenaConexion = _proveedor.ObtenerCadenaConexion();
-        // Implementación para obtener filas de una tabla en SQL Server
-        // Aquí se usaría _proveedor para ejecutar la consulta y devolver los resultados
-        return new List<Dictionary<string, object?>>();
-    }
-}
+// public class RepositorioLecturaSqlServer : IRepositorioLecturaTabla
+// {
+//     private readonly IProveedorConexion _proveedor;
+//     public RepositorioLecturaSqlServer(IProveedorConexion proveedor)
+//     {
+//         _proveedor = proveedor;
+//     }
+//     public async Task<IReadOnlyList<Dictionary<string, object?>>> ObtenerFilasAsync(string nombreTablla, string? esquema, int? limite)
+//     {
+//         var cadenaConexion = _proveedor.ObtenerCadenaConexion();
+//         // Implementación para obtener filas de una tabla en SQL Server
+//         // Aquí se usaría _proveedor para ejecutar la consulta y devolver los resultados
+//         return new List<Dictionary<string, object?>>();
+//     }
+// }
 
 
 app.Run();
