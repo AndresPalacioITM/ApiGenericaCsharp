@@ -13,7 +13,7 @@ namespace ApiGenericaCsharp.Repositorios.Abstracciones
         Task<bool> CrearAsync(string nombreTabla, string? esquema, Dictionary<string, object?> datos, string? camposEncriptar = null);
         Task<int> ActualizarAsync(string nombreTabla, string? esquema, string nombreClave, string valorClave, Dictionary<string, object?> datos, string? camposEncriptar = null);
         Task<int> EliminarAsync(string nombreTabla, string? esquema, string nombreClave, string valorClave);
-        Task<string?> ObtenerHashContrasenaAsync( string nombreTabla, string? esquema, string campoUsuario, string campoContraseña, string valorUsuario);
+        // Task<string?> ObtenerHashContrasenaAsync( string nombreTabla, string? esquema, string campoUsuario, string campoContraseña, string valorUsuario);
         
     }
 
