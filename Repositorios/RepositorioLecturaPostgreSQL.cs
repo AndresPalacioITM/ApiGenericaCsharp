@@ -9,8 +9,7 @@ using ApiGenericaCsharp.Servicios.Abstracciones;
 using ApiGenericaCsharp.Servicios.Utilidades;
 using NpgsqlTypes;
 
-namespace ApiGenericaCsharp.Repositorios
-{
+namespace ApiGenericaCsharp.Repositorios{
     public sealed class RepositorioLecturaPostgreSQL : IRepositorioLecturaTabla
     {     
         private readonly IProveedorConexion _proveedorConexion;
