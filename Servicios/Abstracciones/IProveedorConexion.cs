@@ -3,10 +3,7 @@ namespace ApiGenericaCsharp.Servicios.Abstracciones
 {
     public interface IProveedorConexion
     {
-        public interface IProveedorConexion
-        {
-            string ProveedorActual{get;}
-            string ObtenerCadenaConexion();
-        }
+        string ProveedorActual {get;}
+        string ObtenerCadenaConexion();
     }
 }
