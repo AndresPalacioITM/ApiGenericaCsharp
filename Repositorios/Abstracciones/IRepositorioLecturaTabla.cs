@@ -15,6 +15,8 @@ namespace ApiGenericaCsharp.Repositorios.Abstracciones
         Task<int> EliminarAsync(string nombreTabla, string? esquema, string nombreClave, string valorClave);
         
         Task<string?> ObtenerHashContrasenaAsync( string nombreTabla, string? esquema, string campoUsuario, string campoContraseña, string valorUsuario);
+        Task<Dictionary<string, object?>> ObtenerDiagnosticoConexionAsync();
+
         
     }
 
