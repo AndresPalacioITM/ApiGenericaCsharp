@@ -98,11 +98,7 @@ namespace ApiGenericaCsharp.Controllers
                 }); 
             } 
         } 
-
-
-
     }
-
 }
   
 
